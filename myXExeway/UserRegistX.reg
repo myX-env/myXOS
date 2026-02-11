@@ -1,0 +1,9 @@
+Windows Registry Editor Version 5.00
+
+; 右クリック用の中継EXE登録
+
+[HKEY_CLASSES_ROOT\*\shell\UserRegistX]
+@="中継EXE：Exeway(&X)"
+
+[HKEY_CLASSES_ROOT\*\shell\UserRegistX\command]
+@="\"D:\\myX\\myXExeway\\Exeway.exe\" \"%1\""

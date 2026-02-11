@@ -1,0 +1,50 @@
+■リターンBAT（XR）
+親子トグル：自己リネーム ＋ 親フォルダリネーム
+
+・実行するだけで状態が反転する
+・設定やフラグは持たない
+・状態は「名前」そのもので表現される
+
+基本構造（74バイト最小形）
+(ren XR.bat _XR.bat || ren _XR.bat XR.bat
+cd..
+ren XR _XR || ren _XR XR)
+
+本体名と親フォルダ名を連動して切り替えるのが特徴
+
+配置例
+D:\myX\myXBlank\切替≫User.bat
+
+ファイル名：
+  切替≫Tools.bat ⇔ 切替≫User.bat
+
+フォルダ名：
+  Tools ⇔ _Tools
+
+---
+
+ サンプルBAT（導入用）
+
+@echo off
+cd /d "%~dp0"
+
+:: 自身のBAT名をトグル（User ⇔ Tools）
+ren 切替≫User.bat 切替≫Tools.bat 2>nul || ren 切替≫Tools.bat 切替≫User.bat
+
+:: 親フォルダ名をトグル（Tools ⇔ _Tools）
+ren Tools _Tools 2>nul || ren _Tools Tools
+
+:: 関連APPを再起動
+taskkill /f /im myXBlank.exe >nul 2>&1
+start "" myXBlank.exe
+
+exit
+
+---
+
+ これで何が分かるか
+
+* XRは実行＝切り替え
+* ユーザー操作や確認は一切しない
+* BAT名とフォルダ名が「現在状態」
+* myXBlankなどの外側がUIを持つ

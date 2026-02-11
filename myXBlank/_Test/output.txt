@@ -1,0 +1,4 @@
+#【Test】参照中….bat
+dirコマンド.bat
+input.txt
+output.txt

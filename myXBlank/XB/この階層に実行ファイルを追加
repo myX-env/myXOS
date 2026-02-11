@@ -1,0 +1,14 @@
+ダミーファイル
+このフォルダにバッチで呼び出す実行ファイルを追加する
+
+EXE形式
+..\XB\Sample.exe < input.txt
+
+別表記　これも使える
+type input.txt | ..\XB\Sample.exe
+
+PowerShell形式
+powershell -ExecutionPolicy Bypass -File "..\XB\Sample.ps1 < input.txt"
+
+Python形式
+D:\Thonny\python.exe "..\XB\Sample.py < input.txt"

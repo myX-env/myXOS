@@ -1,0 +1,36 @@
+exit
+---
+バッチ記述サンプル：コピペ活用のテンプレ
+:: TEST.xxx を呼ぶバッチ
+@echo off
+
+exit /b
+
+---
+:: EXE形式 テキスト変換
+..\XB\TEST.exe < input.txt
+---
+:: EXEアプリ起動
+start "" "..\XB\TEST.exe"
+---
+:: PowerShell テキスト変換
+powershell -ExecutionPolicy Bypass -File "..\XB\TEST.ps1" < input.txt
+---
+:: PowerShell形式 PSアプリ起動
+start "" powershell -ExecutionPolicy Bypass -File "..\XB\TEST.ps1"
+---
+:: Python形式(個人環境) テキスト変換
+D:\Thonny\python.exe ..\XB\TEST.py < input.txt
+---
+:: Python形式(個人環境)PYアプリ起動
+start "" D:\Thonny\python.exe ..\XB\TEST.py
+-----
+
+:: 別表記　これも使える
+type input.txt | ..\XB\TEST.exe
+---
+:: クリップにも転送(変換後クリップ保存)
+type output.txt | clip
+---
+:: バッチにリネームコピー
+copy output.txt output.bat

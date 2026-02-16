@@ -23,6 +23,7 @@ myXConv
    ├ #XC_zipを開く.bat	：ZIP内のリスト表示
    ├ #Xヘルパー.bat		：Xヘルパー呼び出し
    ├ #User_Menu.bat	：汎用カスタムバッチを起動
+   ├ #ModeZ_Menu.bat	：特殊カスタムバッチを起動
    ├ #変換BOX_空箱.bat	：変換BOX_空箱を起動
    ├ File累積コピー.bat	：累積複写(サンプル)
    ├ メモ帳.bat			：メモ帳を起動

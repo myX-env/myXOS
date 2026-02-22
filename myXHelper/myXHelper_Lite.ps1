@@ -47,7 +47,7 @@ $apps = @(
     @("ごみ箱", "explorer shell:::{645FF040-5081-101B-9F08-00AA002F954E}"),
     @("+変換BOX_空箱", "D:\\myX\\myXBlank\\XB.bat"),
     @("+ユーザー（カスタム）", "D:\\myX\\User.bat"),
-    @("+XH_zipを開く", "D:\\myX\\myXHelper\\XH_zipを開く.bat"),
+    @("+XH_pak_zipを開く", "D:\\myX\\myXHelper\\XH_pak_zipを開く.bat"),
     @("+ZIPRUNのZIPリスト", "D:\\myX\\myXZipRun\\XZ.bat"),
     @("+ZR/PSテスト：Hello", "D:\\myX\\myXZipRun\\XZ.bat Hello.ps1"),
     @("未登録", ""),

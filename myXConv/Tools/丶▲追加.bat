@@ -1,53 +1,51 @@
 :: 種類：バッチファイル
-:: 概要：コピー＋更新（確認コピー →  再起動）
+:: 概要：判定コピー＋更新（確認コピー →  再起動）
 @echo off
 setlocal
 
-:: カレントのパス
-set "DEST_DIR=%~dp0"
-
-:: 親フォルダ
-set "PARENT=%DEST_DIR%.."
-
-:: コピー元
-set "SRC=%~1"
-
 :: コピー元存在確認
-if not exist "%SRC%" (
-    echo コピー元が存在しないのだ: %SRC%
+if not exist "%~1" (
+    echo コピー元が存在しないのだ: %~1
     pause
     exit /b 1
 )
 
-echo コピー元: %SRC%
-echo コピー先: %DEST_DIR%
+echo コピー元: %~1
+echo コピー先: %~dp0
+
+:: 続行確認
+echo %~nx1 をコピー追加します。
+echo [Enter]で続行 [0]で終了
+set /p x="> "
+if "%x%"=="0" echo 終了します & pause & exit /b
 
 :: 上書き確認
-if exist "%SRC%" (
-    echo 同名ファイルがあるのだ。上書きしますか？ (Y/N)
-    set /p CHOICE=
-    if /i not "%CHOICE%"=="Y" (
-        echo コピーをキャンセルするのだ
+if exist "%~dp0%~nx1" (
+    echo 同名ファイルがあるのだ。上書きしますか？ [Y/N]
+    set "OVR_CHOICE="
+    set /p OVR_CHOICE="入力してEnter: "
+    
+    :: 入力が Y または y の場合のみコピーへ進む
+    if /i "%OVR_CHOICE%"=="Y" (
+        goto :DO_COPY
+    ) else (
+        echo キャンセルされたのだ。
+        pause
         exit /b 0
     )
-    set "MSG=ファイルを上書きしたのだ"
-) else (
-    set "MSG=ファイルをコピーしたのだ"
 )
 
-copy /Y "%SRC%" "%DEST_DIR%\" >nul
-echo 追加先＞%DEST_DIR%
-echo %MSG%！続行で更新なのだ
+:DO_COPY
+echo ファイルをコピー中なのだ...
+copy /Y "%~1" "%~dp0" >nul
+
+echo 追加完了＞%~dp0
+echo 続行で再起動するのだ
 pause
 
-:: EXE パス
-set "EXE=%PARENT%\myXConv.exe"
-
-:: 古いプロセスを終了
+:: プロセス終了と再起動
 taskkill /f /im myXConv.exe >nul 2>&1
-
-:: 再起動
 cd /d "%~dp0.."
-start "" "%EXE%"
+start "" "myXConv.exe"
 
 exit /b

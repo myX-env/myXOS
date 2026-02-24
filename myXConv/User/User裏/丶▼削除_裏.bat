@@ -1,5 +1,5 @@
 :: 種類：バッチファイル
-:: 概要：削除＋更新（確認ゴミ箱 → myX変換 再起動）
+:: 概要：削除＋更新（確認ゴミ箱 → 変換もどき再起動）
 @echo off
 setlocal enabledelayedexpansion
 :: 引数ごとに処理

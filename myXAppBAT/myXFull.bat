@@ -103,4 +103,4 @@ taskkill /f /im myXKey.exe >nul 2>&1
 endlocal
 exit /b
 
----★ここからアプリ情報
+---★ここまでアプリ情報

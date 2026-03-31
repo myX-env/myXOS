@@ -46,7 +46,9 @@ Windows Registry Editor Version 5.00
    対応関係は図解のみで追加説明は不要。
 
 3. レジストリ操作は付属の reg ファイルを使用。
-   解除するには、以下のキーごと削除。
+   解除は付属の削除用 reg を実行すること。
+   手動の場合は以下のキーを削除。
+
    [HKEY_CLASSES_ROOT\*\shell\UserRegistX]
 
 ■ 禁止事項

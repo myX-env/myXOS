@@ -1,0 +1,7 @@
+Windows Registry Editor Version 5.00
+
+; 右クリック用の中継EXE登録の削除用
+
+Windows Registry Editor Version 5.00
+
+[-HKEY_CLASSES_ROOT\*\shell\UserRegistX]

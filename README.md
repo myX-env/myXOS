@@ -5,7 +5,7 @@
 http://blog.livedoor.jp/ldsano/
 
 動画・告知
-https://www.youtube.com/@keitemsano
+https://www.youtube.com/@myX-env
 
 =======================================
 

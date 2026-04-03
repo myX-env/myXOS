@@ -76,6 +76,6 @@ myXBlank\
 : http://blog.livedoor.jp/ldsano/
 
 ‚»‚Ì‘¼‚Ì‚¨’m‚ç‚¹
-: https://www.youtube.com/@keitemsano
+: https://www.youtube.com/@myX-env
 
 =======================================

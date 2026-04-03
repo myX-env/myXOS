@@ -58,7 +58,7 @@ v1.0 - 初版リリース
 http://blog.livedoor.jp/ldsano/
 
 YouTubeチャンネル：
-https://www.youtube.com/@keitemsano
+https://www.youtube.com/@myX-env
 
 =======================================
  《キーナビ v1.0 - 簡易マニュアル》

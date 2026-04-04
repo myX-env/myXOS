@@ -38,6 +38,7 @@ for %%F in ("%TARGET%\myX*.bat") do (
     if /i "%%~nF"=="myXExeway" set "desc=中継EXE"
     if /i "%%~nF"=="myXFull" set "desc=フルBAT"
     if /i "%%~nF"=="myXHelper" set "desc=Xヘルパー"
+    if /i "%%~nF"=="myXIndex" set "desc=Xインデックス"
     if /i "%%~nF"=="myXKey" set "desc=キーナビ"
     if /i "%%~nF"=="myXName" set "desc=命名マスター"
     if /i "%%~nF"=="myXPad" set "desc=XP風メモ帳"

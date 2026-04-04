@@ -31,6 +31,7 @@ echo myXFull.bat       :: #13 ƒtƒ‹BAT       | ‘gžBAT×ÝÁ¬° | myXFulliXFj
 echo myXExeway.bat     :: #14 ’†ŒpEXE       | EXE’‡‰î×¯Êß° | myXExewayiXEj
 echo myXView.bat       :: #15 Xƒrƒ…[       | EXE“àÍÙÌßŠm”F | myXViewiXVj
 echo myXReturn.bat     :: #16 ƒŠƒ^[ƒ“BAT   | Ž©ŒÈØÈ°ÑÄ¸ÞÙ | myXReturniXRj
+echo myXIndex.bat      :: #17 XƒCƒ“ƒfƒbƒNƒX  | Ì«ÙÀÞÂØ°ËÞ­± | myXIndexiXIj
 ) > menu_list.txt
 
 :loop

@@ -9,7 +9,8 @@ myXIndex.exe …本体
 readme.txt …このファイル
 
 ■ はじめに
-myXIndex はフォルダ情報のツリービュアです
+myXIndex は、フォルダ構造を
+HTML のツリー表示に変換するツールです。
 
 ■ 動作環境
 ・OS：Windows 10 以降

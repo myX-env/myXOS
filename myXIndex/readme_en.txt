@@ -5,7 +5,7 @@ myXIndex - X Index v1.0 -
 File Structure and Brief Explanation
 ■ Minimum File Structure
 myXIndex.exe …Main program
-readme.txt …This file
+readme_en.txt …This file
 
 ■ Introduction
 myXIndex is a tool that converts folder structures into an HTML tree view.

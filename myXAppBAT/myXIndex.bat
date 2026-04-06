@@ -2,7 +2,7 @@
 @echo off
 rem Œ»êˆÚ“® ¨ –{‘Ì‹N“® ¨ Œ³–ß‚è
 pushd "%~dp0..\myXIndex"
-call myX.bat %*
+call myXIndex.bat %*
 popd
 exit /b
 

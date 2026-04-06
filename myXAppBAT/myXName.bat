@@ -2,7 +2,7 @@
 @echo off
 rem Œ»êˆÚ“® ¨ –{‘Ì‹N“® ¨ Œ³–ß‚è
 pushd "%~dp0..\myXName"
-powershell.exe -ExecutionPolicy Bypass -File myXName.ps1 %*
+powershell -ExecutionPolicy Bypass -File myXName.ps1 %*
 popd
 exit /b
 

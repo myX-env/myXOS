@@ -1,4 +1,24 @@
 =======================================
+[IMPORTANT] About myXIndex.zip (Quick Start)
+=======================================
+
+This ZIP contains the standalone version of myXIndex.
+
+■ Minimal files
+- myXIndex.exe : main tool
+- readme_en.txt : simple guide
+
+■ How to use
+- Drag & drop a folder onto myXIndex.exe
+  OR
+- Use "Send to" for quick access
+
+■ What it does
+- Converts folder structure into an HTML map
+- Allows instant navigation without getting lost
+
+This is the simplest way to try myXIndex.
+=======================================
 (C) 2025 myX総合センター
 =======================================
 公式ブログ
@@ -8,7 +28,6 @@ http://blog.livedoor.jp/ldsano/
 https://www.youtube.com/@myX-env
 
 =======================================
-
 ■ myX 概要
 myXシリーズは、制約だらけの環境で
 メモ帳とAIだけを頼りに生まれた
@@ -67,6 +86,8 @@ myXは、外部ツール経由で安全に使う設計なのだ。
 制約こそが、枠を超える起点だったのだ。
 
 ■ ライセンスについて
-本ツールはWindows標準機能のみを使用しています。
-外部ソフトの再配布は行っていません。
-外部ツールを利用する場合は各利用規約に従ってください。
+・本ツールはすべてWindows標準機能のみを使用しています
+・外部ソフトの再配布は行っていません
+・外部ツールを利用する場合は各利用規約に従ってください
+
+For a minimal version, see myXIndex.zip at the top.

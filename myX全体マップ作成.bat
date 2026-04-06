@@ -1,4 +1,4 @@
-:: myXフォルダ専用ツリービュア作成
+:: myXフォルダ専用全体マップ作成
 :: ステップ起動バッチ
 @echo off
 
@@ -12,14 +12,14 @@ set /p sel=選択:
 
 if "%sel%"=="1" (
     pushd "%~dp0myXIndex"
-    start "" /wait myXIndex.exe "%~dp0..\..\myX"
+    start "" /wait myXIndex.exe "%~dp0..\myX"
     popd
     goto loop
 )
 
 if "%sel%"=="2" (
-    if exist "%~dp0..\..\myX_list.html" (
-        start "" "%~dp0..\..\myX_list.html"
+    if exist "%~dp0..\myX_list.html" (
+        start "" "%~dp0..\myX_list.html"
     ) else (
         echo インデックスが存在しません
         pause

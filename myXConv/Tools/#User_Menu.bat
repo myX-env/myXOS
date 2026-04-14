@@ -54,8 +54,8 @@ if exist "_User.bat" (
 exit /b
 
 @HELP_START@
-** Option >> SW XB XE CM CMD PS EX 
-  User.bat XB    : myXBlank
+** Option >> XB XE CM CMD PS EX 
+  User.bat XB   : myXBlank
   User.bat XE   : myXExeway
   User.bat CM   : CMD
   User.bat CMD  : CMD

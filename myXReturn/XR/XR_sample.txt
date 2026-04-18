@@ -28,10 +28,13 @@ D:\myX\myXBlank\切替≫User.bat
 @echo off
 cd /d "%~dp0"
 
-:: 自身のBAT名をトグル（User ⇔ Tools）
+:: 自身のBAT名を切替
+:: 切替≫User.bat ⇔ 切替≫Tools.bat
 ren 切替≫User.bat 切替≫Tools.bat 2>nul || ren 切替≫Tools.bat 切替≫User.bat
 
-:: 親フォルダ名をトグル（Tools ⇔ _Tools）
+:: 親フォルダ名を切替（表示順位を制御）
+:: Tools ⇔ _Tools
+:: _Tools は並び順が下がり、User が上位表示されて切替対象になる
 ren Tools _Tools 2>nul || ren _Tools Tools
 
 :: 関連APPを再起動

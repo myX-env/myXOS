@@ -17,6 +17,7 @@ popd
 
 set m=%~nx0
 echo ≫ 起動中の対象ファイル：[%~nx0]
+echo.
 echo [1] バー切替え ：[XXX.bat]⇔[_XXX.bat]
 echo [2] 名前切替え ：[XXX.bat]⇔[ABC.bat]
 echo.

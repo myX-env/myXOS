@@ -1,10 +1,10 @@
 ::------------------------------- 
-:: myXシリーズ16（XR）
+:: myXシリーズ16（XR） ※応用サンプル
 :: myXReturn - リターンBAT v1.0 -
-:: 自己リネームトグル[User]⇔[_User]
+:: 自己リネームトグル[User2]⇔[_User2]
 :: 固定名/自由名
 :: 【注意】実行すると「自分の名前」が
-::        即座に反転する
+::        座に反転する
 :: 【警告】挙動が非常に直感に反するため
 ::        バッチ職人専用
 ::-------------------------------
@@ -17,7 +17,6 @@ popd
 
 set m=%~nx0
 echo ≫ 起動中の対象ファイル：[%~nx0]
-echo.
 echo [1] バー切替え ：[XXX.bat]⇔[_XXX.bat]
 echo [2] 名前切替え ：[XXX.bat]⇔[ABC.bat]
 echo.
@@ -46,7 +45,7 @@ if "%x%"=="1" (
 
 :: --- 名前切替え（登録名ペア切替） ---
 if "%x%"=="2" (
-    ren User.bat _User.bat >nul 2>&1 || ren _User.bat User.bat
+    ren User2.bat _User2.bat >nul 2>&1 || ren _User2.bat User2.bat
     echo 切替え完了！
     set /p x="[Enter]で閉じます"
     REM キーナビも終了---★
@@ -57,10 +56,28 @@ if "%x%"=="2" (
 :skip
 echo スキップ完了＞本処理へ
 echo.
-echo 本処理へ...
-echo ※ここに実行コマンドを置くと
-echo ※XRトグル後の処理を続行
-echo ※現在は処理なし
+echo ここから外部バッチの本処理へ
+pause
+@echo off
+echo このバッチは _User2.bat が存在する場合に
+echo User2.bat から優先実行されるテスト用確認バッチです。
+echo _User2+.bat (+)など付けておけば実行されない
+echo.
+echo 現在の起動ファイル名：%~nx0
+echo.
+echo [Enter]でユーザー指定バッチを起動
+echo [0]で終了
+set /p x="> "
+if "%x%"=="0" exit /b
+
+cd /d "%~dp0..\myXBlank"
+if exist "XB.bat" (
+    call "XB.bat" || call "%~dp0..\myXAppBAT\myXFull.bat"
+) else (
+    call "%~dp0..\myXAppBAT\myXHelper.bat"
+)
+::exit /b
+echo 処理完了！ここまで外部埋め込み
 pause
 REM キーナビも終了---★
 taskkill /im myXKey.exe /f >nul 2>&1

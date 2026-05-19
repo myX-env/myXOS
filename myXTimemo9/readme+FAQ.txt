@@ -5,8 +5,8 @@
 ZIP解凍後のファイル構成と簡易説明
 
 ■ ファイル最小構成
-myXTimemo9.zip
- ├ manual.txt
+myXTimemo9
+ ├ readme+FAQ.txt
  └ myXTimemo9.exe
 
 ■ はじめに

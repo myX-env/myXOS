@@ -3,7 +3,7 @@
  myXKey - キーナビ v1.0 -
 =================================
 ■ ファイル最小構成
-myXKey.zip
+myXKey
  ├ myXKey.exe		：本体
  ├ readme.txt		：このファイル
  ├ XK_pak_zipを開く.bat ：ここのZIPを開く

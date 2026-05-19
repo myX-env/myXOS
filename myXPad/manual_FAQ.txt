@@ -5,9 +5,9 @@
 ZIP解凍後のファイル構成、簡易解説
 
 ■ ファイル最小構成
-myxpad.zip
+myxpad
 ├ myxpad.exe本体
-└ manual.txt マニュアル(このファイル)
+└ manual_FAQ.txt マニュアル(このファイル)
 
 ■ はじめに
 XP風メモ帳はXP風の軽量テキストエディタです。

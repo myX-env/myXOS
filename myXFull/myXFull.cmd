@@ -14,10 +14,12 @@ cls
 setlocal enabledelayedexpansion
 
 :: ★--SendToフォルダ：手動指定--★
-:: set 指定がなければ、この場所が参照先になる
 ::set "sendTo=%~dp0..\myXSend\SendTo_bak"
 ::set "sendTo=%APPDATA%\Microsoft\Windows\SendTo"
 ::set "sendTo=%~dp0..\myXAppBAT"
+::set "sendTo=%~dpn0"
+
+:: set 指定がなければ、この[myXFull]が参照先になる
 if not exist "%sendTo%" (
     set "sendTo=%~dp0"
 )
@@ -42,6 +44,8 @@ if "%~1"=="" (
     set "pseudoArgs=%~1"
 )
 
+:: ★正しいラベルの位置
+:select
 echo 参照先＞%sendTo%
 echo.
 set i=0
@@ -51,7 +55,6 @@ for %%F in ("%sendTo%\*.bat" "%sendTo%\*.ps1" "%sendTo%\*.exe" "%sendTo%\*.lnk")
     echo !i!: %%~nxF
 )
 
-:select
 :: ファイル総数を記録して最後にクリア項目を追加
 set "MAX_NUM=!i!"
 set /a nextNum=!MAX_NUM!+1
@@ -64,6 +67,11 @@ if "%line%"=="0" (
     echo 終了します
     pause
     goto end
+)
+
+if "%line%"=="%nextNum%" (
+    cls
+    goto select
 )
 
 set "sel=%line%"

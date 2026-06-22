@@ -9,16 +9,19 @@
 :: ★最初に引数手動、シンプル軽量版
 :: ≫参照先："sendTo=D:\myX\myXAppBAT"
 :: ≫終了時：exit (/b) で CMD 閉じる
+:: ※XF.bat／XFフォルダ（バッチ名が指定フォルダ）
 ::------------------------------
 @echo off
 cls
 setlocal enabledelayedexpansion
 
 :: ★--SendToフォルダ：手動指定--★（現在：BATランチャー）
-:: set 指定がなければ、この[myXFull]が参照先になる
 ::[送る無双]::set "sendTo=%~dp0..\myXSend\SendTo_bak"
 ::[Win送る]::set "sendTo=%APPDATA%\Microsoft\Windows\SendTo"
+::[※XFフォルダ]::set "sendTo=%~dpn0"
 set "sendTo=%~dp0..\myXAppBAT"
+
+:: set 指定がなければ、この[myXFull]が参照先になる
 if not exist "%sendTo%" (
     set "sendTo=%~dp0"
 )
@@ -43,6 +46,8 @@ if "%~1"=="" (
     set "pseudoArgs=%~1"
 )
 
+:: ★正しいラベルの位置
+:select
 echo 参照先＞%sendTo%
 echo.
 set i=0
@@ -52,7 +57,6 @@ for %%F in ("%sendTo%\*.bat" "%sendTo%\*.ps1" "%sendTo%\*.exe" "%sendTo%\*.lnk")
     echo !i!: %%~nxF
 )
 
-:select
 :: ファイル総数を記録して最後にクリア項目を追加
 set "MAX_NUM=!i!"
 set /a nextNum=!MAX_NUM!+1
@@ -65,6 +69,11 @@ if "%line%"=="0" (
     echo 終了します
     pause
     goto end
+)
+
+if "%line%"=="%nextNum%" (
+    cls
+    goto select
 )
 
 set "sel=%line%"

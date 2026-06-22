@@ -12,37 +12,42 @@ exit /b
 ---★ここからアプリ情報
 
 ::------------------------------
-:: myXシリーズ13（XF）
+:: myXシリーズ13（XF）カスタムBAT
 :: myXFull - フルBAT -  v1.0
-:: 送る無双とBATランチャーの二刀流
-:: 単体起動でも引数起動、PS対応
-:: 内部PS補助：ファイルclipをパスコピー
-:: 外部EXE補助：★キーナビ
+:: フル装備型の二刀流バッチ
+:: 送る／単体でも引数起動、PS対応
+:: 外部EXE補助：myXKey（キーナビ）
+:: 外部EXE補助：Clip_F2P（パス変換）
+:: 内部PS補助：引数を保持して起動
 :: ★最初に引数手動、シンプル軽量版
 :: ≫参照先："sendTo=D:\myX\myXAppBAT"
 :: ≫終了時：exit (/b) で CMD 閉じる
+:: ※XF.bat／XFフォルダ（バッチ名が指定フォルダ）
 ::------------------------------
 @echo off
 cls
 setlocal enabledelayedexpansion
 
 :: ★--SendToフォルダ：手動指定--★（現在：BATランチャー）
-::[myXFull] set 指定がなければ、この場所が参照先になる
-::[送る無双]set "sendTo=D:\myX\myXSend\SendTo_bak"
-::[Win送る]set "sendTo=%APPDATA%\Microsoft\Windows\SendTo"
-set "sendTo=D:\myX\myXAppBAT"
+::[送る無双]::set "sendTo=%~dp0..\myXSend\SendTo_bak"
+::[Win送る]::set "sendTo=%APPDATA%\Microsoft\Windows\SendTo"
+::[※XFフォルダ]::set "sendTo=%~dpn0"
+set "sendTo=%~dp0..\myXAppBAT"
+
+:: set 指定がなければ、この[myXFull]が参照先になる
 if not exist "%sendTo%" (
     set "sendTo=%~dp0"
 )
 
-:: キーナビ起動（絶対パス）
-::start "" /b "%~dp0..\myXKey\myXKey.exe"
-start "" /b "D:\myX\myXKey\myXKey.exe"
+:: キーナビ起動
+pushd "%~dp0..\myXKey"
+call XK.bat
+popd
 
 :: 引数取得（右クリック1ファイル前提）
-::カッコ内が相対パスの場合→(`%~dp0..\myXKey\Ext\Clip_F2P.exe`)
+:: Clip_F2P.exe → ファイルクリップをテキストパスに変換
 if "%~1"=="" (
-    for /f "usebackq delims=" %%C in (`D:\myX\myXKey\Ext\Clip_F2P.exe`) do (
+    for /f "usebackq delims=" %%C in (`%~dp0..\myXKey\Ext\Clip_F2P.exe`) do (
         set "pseudoArgs=%%C"
     )
 
@@ -54,6 +59,8 @@ if "%~1"=="" (
     set "pseudoArgs=%~1"
 )
 
+:: ★正しいラベルの位置
+:select
 echo 参照先＞%sendTo%
 echo.
 set i=0
@@ -63,7 +70,6 @@ for %%F in ("%sendTo%\*.bat" "%sendTo%\*.ps1" "%sendTo%\*.exe" "%sendTo%\*.lnk")
     echo !i!: %%~nxF
 )
 
-:select
 :: ファイル総数を記録して最後にクリア項目を追加
 set "MAX_NUM=!i!"
 set /a nextNum=!MAX_NUM!+1
@@ -76,6 +82,11 @@ if "%line%"=="0" (
     echo 終了します
     pause
     goto end
+)
+
+if "%line%"=="%nextNum%" (
+    cls
+    goto select
 )
 
 set "sel=%line%"

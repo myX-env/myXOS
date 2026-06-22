@@ -10,8 +10,8 @@ Exeway.exe は「中継役」のアプリなのだ。
 割込み処理と通常のEXEを切り替えて使うのだ。
 
 D:\myX\myXExeway
-  ├ _Exeway（割込みON/OFF用）
-  │  └ WARI.bat …テスト用や通常EXEでもOK
+  ├ _Exeway+（割込みON/OFF用）
+  │  └ WARI_dir.bat …テスト用や通常EXEでもOK
   ├ Exeway（標準EXE用、名前固定）
   │  └ Hello.exe …通常のEXE
   └ Exeway.exe …中継EXE

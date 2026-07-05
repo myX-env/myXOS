@@ -31,6 +31,7 @@ http://blog.livedoor.jp/ldsano/
 https://www.youtube.com/@myX-env
 
 =======================================
+
 ■ myX 概要
 myXシリーズは、制約だらけの環境で
 メモ帳とAIだけを頼りに生まれた

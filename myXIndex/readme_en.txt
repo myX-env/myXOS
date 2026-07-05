@@ -39,6 +39,8 @@ Functions may be changed or updated without notice.
 ■ Update History
 v1.0 - Initial Release
 ■ Blog / Other Information
+Official Website & Articles:
+https://note.com/myxindex
 Official Blog:
 http://blog.livedoor.jp/ldsano/
 YouTube Channel:

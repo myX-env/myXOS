@@ -23,8 +23,10 @@ This is the simplest way to try myXIndex.
 =======================================
 公式サイト・記事
 https://note.com/myxindex
+
 公式ブログ
 http://blog.livedoor.jp/ldsano/
+
 動画
 https://www.youtube.com/@myX-env
 =======================================

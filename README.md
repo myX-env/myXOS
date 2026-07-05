@@ -29,6 +29,7 @@ http://blog.livedoor.jp/ldsano/
 
 動画
 https://www.youtube.com/@myX-env
+
 =======================================
 ■ myX 概要
 myXシリーズは、制約だらけの環境で

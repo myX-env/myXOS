@@ -32,6 +32,7 @@ echo myXExeway.bat     :: #14 中継EXE       － EXE仲介ﾗｯﾊﾟｰ － myXExeway（XE）
 echo myXView.bat       :: #15 Xビュー       － EXE内ﾍﾙﾌﾟ確認 － myXView（XV）
 echo myXReturn.bat     :: #16 リターンBAT   － 自己ﾘﾈｰﾑﾄｸﾞﾙ － myXReturn（XR）
 echo myXIndex.bat      :: #17 Xインデックス  － ﾌｫﾙﾀﾞﾂﾘｰﾋﾞｭｱ － myXIndex（XI）
+echo myXLine.bat       :: #18 インライン電卓 － どこでも電卓 － myXLine（XL）
 ) > menu_list.txt
 
 :loop

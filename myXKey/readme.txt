@@ -7,8 +7,9 @@ myXKey
  ├ myXKey.exe		：本体
  ├ readme.txt		：このファイル
  ├ XK.bat		：本体の起動バッチ
- ├ settings.ini	：設定ファイル
- ├ exe-ini_mix.bat	：本体と設定の結合バッチ
+ ├ settings.cmd	：設定ファイル（通常）
+ ├ settings+.cmd	：設定ファイル（自主切替え）
+ ├ exe-cmd_mix.bat	：本体と設定の結合バッチ
  ├ XK_AltClip.bat	：Altクリップ起動
  ├ XK_pak_zipを開く.bat ：ここのZIPを開く
  ├ XK_pak.zip		：サンプル収録ZIP
@@ -33,7 +34,7 @@ myXKey
 
 ■ 注意事項
 ・設定は記録されません。
-・settings.iniがある場合は、自動で読み込みます。
+・settings.cmdがある場合は、自動で読み込みます。
 ・レジストリは使用していません。
 
 ■ 禁止事項
@@ -87,7 +88,7 @@ BATランチャー向けのマウス操作型
 - 矢印モードやメニュー切替は色で判別可能
 - BATランチャーとの連携で番号クリック実行
 - ALTモードで矩形選択取得
-- settings.iniでカスタムボタン設定可能
+- settings.cmdでカスタムボタン設定可能
 - 特殊ボタンはツールチップ表示
 
 ■ 技術メモ
@@ -98,7 +99,7 @@ BATランチャー向けのマウス操作型
 - 本ツールは多重起動を想定していない
   ALT常駐との同時起動は挙動不定となる
   対処法 → 本アプリ再起動後、アプリ通常終了
-- 設定ファイルのsettings.iniを専用バッチで
+- 設定ファイルのsettings.cmdを専用バッチで
   EXEに連結することで、設定入りの単体EXEとして
   使用可能
 

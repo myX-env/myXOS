@@ -75,10 +75,13 @@ v1.0 - 初版リリース
 
 ■ ブログ / その他情報
 ---------------------------------------
-公式ブログ
-: http://blog.livedoor.jp/ldsano/
+公式サイト・記事
+https://note.com/myxindex
 
-その他のお知らせ
-: https://www.youtube.com/@myX-env
+公式ブログ
+http://blog.livedoor.jp/ldsano/
+
+動画
+https://www.youtube.com/@myX-env
 
 =======================================

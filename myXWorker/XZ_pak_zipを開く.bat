@@ -17,6 +17,6 @@ echo [Enter]で続行 ≫ Xワーカーで確認
 pause
 :: 解凍先フォルダにあるファイルをセット
 for %%f in ("%Temp%\ExeCollection\*.*") do (
-PS_run.bat "myXWorker.ps1" "%%f"
+PSrun.bat "myXWorker.ps1" "%%f"
 )
 exit

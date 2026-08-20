@@ -1,9 +1,9 @@
 #--------------------------------------------
 # myXシリーズ8（XW）
-# myXWorker - Xワーカー v1.0
+# myXWorker - Xワーカー v2.0
 # 統合GUIランチャー、固定Tempでbat履歴2個保持
-# ラジオ選択/引数/右ヘルプ/プレビュー/PS対応
-# EXE判定、ヘルプ、DLL
+# ラジオ選択/引数/プレビュー/PS対応/
+# EXE/DLL判定、BAT名修正、右メニュー強化
 #--------------------------------------------
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
@@ -17,16 +17,17 @@ function Get-ExePreviewSimple {
 
         $peOffset = [BitConverter]::ToInt32($bytes, 0x3C)
         if ($peOffset + 6 -ge $bytes.Length) { return "判定不能" }
-
-        if ($bytes[$peOffset] -ne 0x50 -or $bytes[$peOffset+1] -ne 0x45) {
-            return "判定不能"
-        }
+        if ($bytes[$peOffset] -ne 0x50 -or $bytes[$peOffset+1] -ne 0x45) { return "判定不能" }
 
         $machine = [BitConverter]::ToUInt16($bytes, $peOffset + 4)
-        $bits = if ($machine -eq 0x8664) { "64ビット(x64)" } elseif ($machine -eq 0x014c) { "32ビット(x86)" } else { "未対応アーキテクチャ" }
+        $bits = if ($machine -eq 0x8664) { "64ビット(x64)" }
+                elseif ($machine -eq 0x014c) { "32ビット(x86)" }
+                else { "未対応アーキテクチャ" }
 
         $optHeaderOffset = $peOffset + 24
-        if ($optHeaderOffset + 70 -ge $bytes.Length) { return "$bits の実行ファイル（サブシステム不明）なのだ" }
+        if ($optHeaderOffset + 70 -ge $bytes.Length) {
+            return "$bits の実行ファイル（サブシステム不明）なのだ"
+        }
 
         $subsystem = [BitConverter]::ToUInt16($bytes, $optHeaderOffset + 68)
         $ui = switch ($subsystem) {
@@ -74,7 +75,7 @@ try {
 
 # フォーム構築
 $form = New-Object System.Windows.Forms.Form
-$form.Text = "Xワーカー v1.0 統合GUIランチャー"
+$form.Text = "Xワーカー v2.0 統合GUIランチャー"
 $form.Size = New-Object System.Drawing.Size(600, 400)
 $form.StartPosition = "CenterScreen"
 $form.Add_Resize({
@@ -87,53 +88,111 @@ $form.Add_Resize({
     }
 })
 
-# 右クリック表示
+# 右クリック（全体if：WinForms）
 $form.Add_MouseUp({
     param($sender, $e)
     if ($e.Button -eq [System.Windows.Forms.MouseButtons]::Right) {
         $menu = New-Object System.Windows.Forms.ContextMenuStrip
 
-        # 項目を追加
-        $menu.Items.Add("→ 履歴フォルダを開く") | ForEach-Object {
-            $_.Add_Click({
-                Start-Process -FilePath "$env:TEMP"
-            })
-        }
-        $menu.Items.Add((New-Object System.Windows.Forms.ToolStripSeparator))
-
-        # ローカルZIP
-        $ext = $menu.Items.Add("＋ ローカルZIP... ZIPRUN")
-        $ext.ToolTipText = "$PSScriptRoot\XZ_zip_exeを開く.bat"        
-        $ext.Add_Click({
-            Start-Process "$PSScriptRoot\XZ_zip_exeを開く.bat"
-        })
-
+        # 外部1
         $ext1 = $menu.Items.Add("＋ 外部ツール1... 変換BOX_空箱")
         $ext1.ToolTipText = "D:\myX\myXBlank\XB.bat"
         $ext1.Add_Click({
             Start-Process -FilePath "D:\myX\myXBlank\XB.bat"
         })
+
+        # 外部2
         $ext2 = $menu.Items.Add("＋ 外部ツール2... ユーザー")
         $ext2.ToolTipText = "D:\myX\User.bat"
         $ext2.Add_Click({
             Start-Process -FilePath "D:\myX\User.bat"
         })
-        $menu.Items.Add((New-Object System.Windows.Forms.ToolStripSeparator))
 
-        $menu.Items.Add("   補足") | ForEach-Object {
+        # ローカルZIP
+        $ext = $menu.Items.Add("＋ ローカルZIP... ZIPRUN")
+        $ext.ToolTipText = "$PSScriptRoot\XZ_pak_zipを開く.bat"        
+        $ext.Add_Click({
+            Start-Process "$PSScriptRoot\XZ_pak_zipを開く.bat"
+        })
+        $menu.Items.Add("-") | Out-Null # 区切り
+
+        # ローカル選択
+        $subA = New-Object System.Windows.Forms.ToolStripMenuItem("≫ ローカル選択")
+        $subA.ToolTipText = "現在位置のファイルを起動"
+        $basePath = $PSScriptRoot
+        if ([string]::IsNullOrWhiteSpace($basePath)) {
+            $basePath = [System.IO.Directory]::GetCurrentDirectory()
+        }
+        $files = [System.IO.Directory]::GetFiles($basePath, "*.*")
+        foreach ($f in $files) {
+            $filePath = [string]$f
+            $fileName  = [System.IO.Path]::GetFileName($filePath)
+            $item = New-Object System.Windows.Forms.ToolStripMenuItem($fileName)
+            $item.Tag = $filePath
+            $null = $item.Add_Click({
+                param($sender, $eventArgs)
+                $fp = $sender.Tag
+                if (-not (Test-Path -LiteralPath $fp)) { return }
+                try {
+                    $psi = New-Object System.Diagnostics.ProcessStartInfo
+                    $psi.FileName = $fp
+                    $psi.UseShellExecute = $true
+                    [System.Diagnostics.Process]::Start($psi) | Out-Null
+                } catch {
+                    [System.Windows.Forms.MessageBox]::Show(
+                    "開けなかったのだ: $fp `n`n$($_.Exception.Message)")
+                }
+            })
+            $subA.DropDownItems.Add($item) | Out-Null
+        }
+        $menu.Items.Add($subA) | Out-Null
+
+        # ユーザー補足
+        $mi6 = $menu.Items.Add("     ユーザー補足")
+        $mi6.Add_Click({
+            [Console]::WriteLine(" ")
+            [Console]::WriteLine("《 myXWorker（XW） - パス一覧 - 》")
+            [Console]::WriteLine(" ")
+            [Console]::WriteLine("スクリプト本体: $PSCommandPath")
+            [Console]::WriteLine("ローカルZIP   : $PSScriptRoot\XZ_pak_zipを開く.bat")
+            [Console]::WriteLine("外部ツール1   : D:\myX\myXBlank\XB.bat")
+            [Console]::WriteLine("外部ツール2   : D:\myX\User.bat")
+            [Console]::WriteLine("履歴フォルダ  : $env:TEMP")
+        })
+        $menu.Items.Add("-") | Out-Null # 区切り
+
+        # 履歴フォルダ
+        $menu.Items.Add("→ 履歴フォルダを開く") | ForEach-Object {
+            $_.Add_Click({
+                Start-Process -FilePath "$env:TEMP"
+            })
+        }
+
+        # エクスプローラー
+        $ext3 = $menu.Items.Add("＋ エクスプローラー...")
+        $ext3.ToolTipText = "現在位置を開く$PSScriptRoot"
+        $ext3.Add_Click({
+            explorer.exe "$PSScriptRoot"
+        })
+        $menu.Items.Add("-") | Out-Null # 区切り
+
+        # 情報
+        $menu.Items.Add(" i  情報") | ForEach-Object {
             $_.Add_Click({
                 [System.Windows.Forms.MessageBox]::Show(
-                    "myXシリーズ8 `n`nmyXWorker（XW） - Xワーカー v1.0 -`n`n" +
+                    "myXシリーズ8 `n`nmyXWorker（XW） - Xワーカー v2.0 -`n`n" +
                     "概要：擬似GUIランチャーで、ps1/bat/exe を引数付きで実行可能`n`n" +
                     "ファイル・フォルダをまとめて渡せるが、対応はアプリ次第`n`n" +
                     "EXEの埋め込みヘルプと依存DLL情報も確認できるのだ`n`n" +
                     "バッチファイルの対応`n`n" +
                     "・安全策として Temp フォルダで実行（ファイル名：PersistentBatch.bat）`n`n" +
                     "・（ exit / goto :eof ） は即終了のため pause & exit に置換（任意）",
-                    "補足")
+                    " i  情報")
             })
         }
-        $menu.Items.Add((New-Object System.Windows.Forms.ToolStripSeparator))
+        $menu.Items.Add("-") | Out-Null # 区切り
+
+        # 閉じる
         $menu.Items.Add("× 閉じる") | ForEach-Object {
             $_.Add_Click({ $form.Close() })
         }
@@ -326,7 +385,11 @@ $runButton.Add_Click({
                 # この場合、GUIで指定された引数($quotedArgs)は使用しない
                 Start-Process -FilePath $script
             } catch {
-                [System.Windows.Forms.MessageBox]::Show("ファイルを開けませんでした: $($_.Exception.Message)", "エラー", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
+                [System.Windows.Forms.MessageBox]::Show(
+                "ファイルを開けませんでした: $($_.Exception.Message)",
+                "エラー",
+                [System.Windows.Forms.MessageBoxButtons]::OK,
+                [System.Windows.Forms.MessageBoxIcon]::Error)
             }
         }
     }
@@ -334,7 +397,7 @@ $runButton.Add_Click({
 })
 $form.Controls.Add($runButton)
 
-# 初期状態でフォームを最前面表示し、アクティブにする
-$form.Topmost = $true
-$form.Add_Shown({ $form.Activate(); $form.Topmost = $false }) # Activate後にTopmostを解除することが推奨される場合がある
+# 最前面からActivate後に最前解除（false）推奨
+#$form.Topmost = $true
+$form.Add_Shown({ $form.Activate(); $form.Topmost = $false })
 [void]$form.ShowDialog()

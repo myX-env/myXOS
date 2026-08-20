@@ -2,7 +2,7 @@
 @echo off
 rem Œ»êˆÚ“® ¨ –{‘Ì‹N“® ¨ Œ³–ß‚è
 pushd "%~dp0..\myXSend"
-start "" /b myXSend.exe %*
+start "" myXSend.exe %*
 popd
 exit /b
 

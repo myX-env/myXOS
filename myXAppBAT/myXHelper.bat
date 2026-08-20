@@ -2,7 +2,7 @@
 @echo off
 rem Œ»êˆÚ“® ¨ –{‘Ì‹N“® ¨ Œ³–ß‚è
 pushd "%~dp0..\myXHelper"
-powershell -ExecutionPolicy Bypass -File myXHelper_Lite.ps1 %*
+powershell -ExecutionPolicy Bypass -File myXHelper_Lite.ps1
 popd
 exit /b
 

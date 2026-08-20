@@ -7,7 +7,7 @@
 cd /d "%~dp0..\myXConv"
 
 :: 2. 本体起動（実行ファイルを呼び出す）
-start "" /b "myXConv.exe" %*
+start "" "myXConv.exe" %*
 
 :: 3. 復帰処理（バッチ自身のフォルダに戻る）
 cd /d "%~dp0"
@@ -18,7 +18,7 @@ exit /b
 自由記述（コメント化も不要）
 ※1～4の同処理を pushd / popd で書いた例
 pushd "%~dp0..\myXConv"
-start "" /b "myXConv.exe" %*
+start "" "myXConv.exe" %*
 popd
 exit /b
 

@@ -2,7 +2,7 @@
 @echo off
 rem Œ»êˆÚ“® ¨ –{‘Ì‹N“® ¨ Œ³–ß‚è
 pushd "%~dp0..\myXLine"
-start "" /b myXLine.exe %*
+start "" myXLine.exe
 popd
 exit /b
 

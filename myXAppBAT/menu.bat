@@ -11,7 +11,7 @@
 cls
 :: ★キーナビを起動（不要ならOFF）
 pushd "%~dp0..\myXKey"
-start "" /b "myXKey.exe"
+call XK.bat
 popd
 
 setlocal enabledelayedexpansion
@@ -48,6 +48,7 @@ for %%F in ("%TARGET%\myX*.bat") do (
     if /i "%%~nF"=="myXTimemo9" set "desc=タイメモ9"
     if /i "%%~nF"=="myXView" set "desc=Xビュー"
     if /i "%%~nF"=="myXWorker" set "desc=Xワーカー"
+    if /i "%%~nF"=="myXXorBox" set "desc=反転BOX "
     if /i "%%~nF"=="myXZipRun" set "desc=ZIPRUN"
     if /i "%%~nF"=="myX－仮登録サンプル" set "desc=コメント"
 

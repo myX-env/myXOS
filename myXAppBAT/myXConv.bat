@@ -21,28 +21,28 @@ myXConv
 ├ XC.bat		：本体の起動補助バッチ
 ├ XC_exe.bat		：本体の代理バッチ
 ├ T_change.bat		：ツール切り換え用
-├ myXHelper.ps1		：Xヘルパー(ランチャー)
+├ myXHelper.ps1	：Xヘルパー(ランチャー)
 ├ 詳細はTools内のtxt	：0バイト
-├ XC				：ZIP保存フォルダ
+├ XC			：ZIP保存フォルダ
 │  ├ [XC]⇔[_XC].bat	：ZIP切替え
-│  ├ XC_pak.zip		：ZIPリストA	
+│  ├ XC_pak.zip	：ZIPリストA	
 │  └ _XC_pak.zip	：ZIPリストB
-└ Tools				：参照ツールフォルダ
+└ Tools			：参照ツールフォルダ
    ├ !!現在【Tools】.bat	：明示＋切替え
    ├ !切替≫User.bat		：フォルダ切替え
-   ├ #XC_zipを開く.bat	：ZIP内のリスト表示
+   ├ #Mode_myX.bat		：オプション起動バッチ
+   ├ #XC_zipを開く.bat		：ZIP内のリスト表示
    ├ #Xヘルパー.bat		：Xヘルパー呼び出し
-   ├ #User_Menu.bat	：汎用カスタムバッチを起動
-   ├ #変換BOX_空箱.bat	：変換BOX_空箱を起動
+   ├ #変換BOX_空箱.bat		：変換BOX_空箱を起動
    ├ File累積コピー.bat	：累積複写(サンプル)
-   ├ メモ帳.bat			：メモ帳を起動
+   ├ メモ帳.bat		：メモ帳を起動
    ├ Hello.ps1			：Hello, World!
    ├ 丶はじめに.txt		：このファイル
    ├ 丶▲追加.bat		：パーツを追加
    ├ 丶▼削除.bat		：ファイルをごみ箱へ
    ├ 丶★更新.bat		：ツール内を更新
-   ├ 丶裏メニュー.bat	：1階層下にも同様の構成に
-   └ Tools裏		：裏メニュー用フォルダ
+   ├ 丶裏メニュー.bat		：1階層下にも同様の構成に
+   └ Tools裏			：裏メニュー用フォルダ
       ├ 丶▲追加_裏.bat	：パーツを追加
       ├ 丶▼削除_裏.bat	：ファイルをごみ箱へ
       └ 丶★更新_裏.bat	：フォルダ内を更新
@@ -69,5 +69,8 @@ myXConv
 ・設定やレジストリは不要
 ・シンプル設計で余計な機能なし
 ・他のツールやスクリプトと組み合わせて利用可能
+
+■ 注意事項
+・入力パスは正確に指定すること
 
 ---★ここまでアプリ情報

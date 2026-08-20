@@ -2,7 +2,7 @@
 @echo off
 rem Œ»êˆÚ“® ¨ –{‘Ì‹N“® ¨ Œ³–ß‚è
 pushd "%~dp0..\myXPad"
-start "" /b myXPad.exe %*
+start "" myXPad.exe %*
 popd
 exit /b
 

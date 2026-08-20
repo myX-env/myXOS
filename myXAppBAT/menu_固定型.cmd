@@ -8,22 +8,22 @@
 cls
 :: šƒL[ƒiƒr‚ð‹N“®i•s—v‚È‚çOFFj
 pushd "%~dp0..\myXKey"
-start "" /b "myXKey.exe"
+call XK.bat
 popd
 
 setlocal enabledelayedexpansion
 
 :: ‰‰ñ‚Ì‚Ý menu_list.txt ‚ðì¬
 (
-echo myXPad.bat         :: #01 XP•—ƒƒ‚’     | ÒÓ’ /ŠÈˆÕ•ÒW | myXPadiXPj
-echo myXConv.bat        :: #02 •ÏŠ·‚à‚Ç‚«    | Ì§²ÙŽó‚¯“n‚µ | myXConviXCj
-echo myXHelper.bat      :: #03 Xƒwƒ‹ƒp[     | ”Ä—pÎÞÀÝ×ÝÁ¬°| myXHelperiXHj
-echo myXSend.bat        :: #04 ‘—‚é–³‘o      | ‘æ2‚Ìu‘—‚év | myXSendiXSj
-echo myXDiff.bat        :: #05 ”äŠr“]¶      | 2‘‹Ã·½Ä”äŠr  | myXDiffiXDj
-echo myXZipRun.bat      :: #06 ZIPRUN        | ZIP/PS×ÝÁ¬° | myXZipRuniXZj
-echo myXName.bat        :: #07 –½–¼ƒ}ƒXƒ^[  | –½–¼•â•     | myXNameiXNj
-echo myXWorker.bat      :: #08 Xƒ[ƒJ[     | ‹[Ž—GUI×ÝÁ¬° | myXWorkeriXWj
-echo myXTimemo9.bat     :: #09 ƒ^ƒCƒƒ‚9     | ŽûWClipŠˆ—p | myXTimemo9iXTj
+echo myXPad.bat        :: #01 XP•—ƒƒ‚’     | ÒÓ’ /ŠÈˆÕ•ÒW | myXPadiXPj
+echo myXConv.bat       :: #02 •ÏŠ·‚à‚Ç‚«    | Ì§²ÙŽó‚¯“n‚µ | myXConviXCj
+echo myXHelper.bat     :: #03 Xƒwƒ‹ƒp[     | ”Ä—pÎÞÀÝ×ÝÁ¬°| myXHelperiXHj
+echo myXSend.bat       :: #04 ‘—‚é–³‘o      | ‘æ2‚Ìu‘—‚év | myXSendiXSj
+echo myXDiff.bat       :: #05 ”äŠr“]¶      | 2‘‹Ã·½Ä”äŠr  | myXDiffiXDj
+echo myXZipRun.bat     :: #06 ZIPRUN        | ZIP/PS×ÝÁ¬° | myXZipRuniXZj
+echo myXName.bat       :: #07 –½–¼ƒ}ƒXƒ^[  | –½–¼•â•     | myXNameiXNj
+echo myXWorker.bat     :: #08 Xƒ[ƒJ[     | ‹[Ž—GUI×ÝÁ¬° | myXWorkeriXWj
+echo myXTimemo9.bat    :: #09 ƒ^ƒCƒƒ‚9     | ŽûWClipŠˆ—p | myXTimemo9iXTj
 echo myXBlank.bat      :: #10 •ÏŠ·BOX_‹ó”   | ŠO•”Ã·½Ä•ÏŠ· | myXBlankiXBj
 echo myXAppBAT_win.bat :: #11 BATƒ‰ƒ“ƒ`ƒƒ[ | ”Ä—pBAT×ÝÁ¬° | myXAppBATiXAj
 echo myXKey.bat        :: #12 ƒL[ƒiƒr      | ÃÝ·°“ü—Í•â• | myXKeyiXKj
@@ -33,6 +33,7 @@ echo myXView.bat       :: #15 Xƒrƒ…[       | EXE“àÍÙÌßŠm”F | myXViewiXVj
 echo myXReturn.bat     :: #16 ƒŠƒ^[ƒ“BAT   | Ž©ŒÈØÈ°ÑÄ¸ÞÙ | myXReturniXRj
 echo myXIndex.bat      :: #17 XƒCƒ“ƒfƒbƒNƒX  | Ì«ÙÀÞÂØ°ËÞ­± | myXIndexiXIj
 echo myXLine.bat       :: #18 ƒCƒ“ƒ‰ƒCƒ““d‘ì | ‚Ç‚±‚Å‚à“d‘ì | myXLineiXLj
+echo myXXorBox.bat     :: #19 ”½“]BOX       | ”ÍˆÍ”½“]•\Ž¦ | myXXorBoxiXXj
 ) > menu_list.txt
 
 :loop

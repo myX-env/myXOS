@@ -2,7 +2,7 @@
 @echo off
 rem Œ»êˆÚ“® ¨ –{‘Ì‹N“® ¨ Œ³–ß‚è
 pushd "%~dp0..\myXTimemo9"
-start "" /b myXTimemo9.exe %*
+start "" myXTimemo9.exe %*
 popd
 exit /b
 

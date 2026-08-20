@@ -2,7 +2,7 @@
 @echo off
 rem Œ»êˆÚ“® ¨ –{‘Ì‹N“® ¨ Œ³–ß‚è
 pushd "%~dp0..\myXDiff"
-start "" /b myXDiff.exe %*
+start "" myXDiff.exe %*
 popd
 exit /b
 

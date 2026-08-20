@@ -2,7 +2,7 @@
 @echo off
 rem Œ»êˆÚ“® ¨ –{‘Ì‹N“® ¨ Œ³–ß‚è
 pushd "%~dp0..\myXExeway"
-start "" /b Exeway.exe %*
+start "" Exeway.exe %*
 popd
 exit /b
 

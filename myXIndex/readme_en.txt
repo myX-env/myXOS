@@ -1,4 +1,4 @@
-=================================
+﻿=================================
 myX Series 17 (XI)
 myXIndex - X Index v1.0 -
 =================================
@@ -36,13 +36,19 @@ Functions may be changed or updated without notice.
 =======================================
 (C) 2025 myX Series 17 (XI)
 =======================================
+
 ■ Update History
+
 v1.0 - Initial Release
+
 ■ Blog / Other Information
+
 Official Website & Articles:
 https://note.com/myxindex
+
 Official Blog:
 http://blog.livedoor.jp/ldsano/
+
 YouTube Channel:
 https://www.youtube.com/@myX-env
 

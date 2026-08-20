@@ -3,6 +3,6 @@
 @echo off
 rem Œ»êŒÅ’è ¨ –{‘Ì‹N“® ¨ Œ³–ß‚è
 pushd "%~dp0"
-start "" /b myXKey.exe %*
+start "" /b myXKey.exe
 popd
 exit /b

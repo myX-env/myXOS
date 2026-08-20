@@ -1,7 +1,7 @@
 #---------------------------------
-# myXシリーズ7（XN）
-# myXName - 命名マスター v1.0
-# スリム化,3段タグ,手動修正
+# myXシリーズ7 myXName（XN） 
+# - 命名マスター v2.0
+# 3段タグ、手動修正、右メニュー強化
 #---------------------------------
 Add-Type -AssemblyName PresentationFramework
 
@@ -37,7 +37,7 @@ $tags2   = @("",
 # WPF XAMLを定義 (プレビュー用テキストボックスを編集可能に変更)
 [xml]$xaml = @"
 <Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        Title="命名マスター v1.0  一覧から右クリック【開く】でファイル実行" Height="150" Width="550"
+        Title="命名マスター v2.0  一覧から右クリック【開く】でファイル実行" Height="150" Width="550"
         Background="LightGray" Foreground="White" WindowStartupLocation="CenterScreen">
   <Grid Margin="10">
     <Grid.RowDefinitions>
@@ -173,6 +173,116 @@ $controls.SymbolBox.add_SelectionChanged({ Update-Preview })
 $controls.Tag1Box.add_SelectionChanged({ Update-Preview })
 $controls.Tag2Box.add_SelectionChanged({ Update-Preview })
 $controls.FilePathBox.add_TextChanged({ Update-Preview })
+
+# 右クリック(WPF ContextMenu)
+$menu = New-Object System.Windows.Controls.ContextMenu
+
+# 外部1
+$ext1 = New-Object System.Windows.Controls.MenuItem
+$ext1.Header  = "＋ 外部ツール1... 変換BOX_空箱"
+$ext1.ToolTip = "D:\myX\myXBlank\XB.bat"
+$ext1.Add_Click({ Start-Process -FilePath "D:\myX\myXBlank\XB.bat" })
+$menu.Items.Add($ext1) | Out-Null
+
+# 外部2
+$ext2 = New-Object System.Windows.Controls.MenuItem
+$ext2.Header  = "＋ 外部ツール2... ユーザー"
+$ext2.ToolTip = "D:\myX\User.bat"
+$ext2.Add_Click({ Start-Process -FilePath "D:\myX\User.bat" })
+$menu.Items.Add($ext2) | Out-Null
+
+# ローカルZIP
+$extZip = New-Object System.Windows.Controls.MenuItem
+$extZip.Header  = "＋ ローカルZIP... ZIPRUN"
+$extZip.ToolTip = "$PSScriptRoot\XZ_pak_zipを開く.bat"
+$extZip.Add_Click({ Start-Process "$PSScriptRoot\XZ_pak_zipを開く.bat" })
+$menu.Items.Add($extZip) | Out-Null
+$menu.Items.Add((New-Object System.Windows.Controls.Separator)) | Out-Null
+
+# ローカル選択
+$subA = New-Object System.Windows.Controls.MenuItem
+$subA.Header  = "≫ ローカル選択"
+$subA.ToolTip = "現在位置のファイルを起動"
+$basePathMenu = $PSScriptRoot
+if ([string]::IsNullOrWhiteSpace($basePathMenu)) {
+    $basePathMenu = [System.IO.Directory]::GetCurrentDirectory()
+}
+$filesMenu = [System.IO.Directory]::GetFiles($basePathMenu, "*.*")
+foreach ($f in $filesMenu) {
+    $filePath = [string]$f
+    $fileName = [System.IO.Path]::GetFileName($filePath)
+    $item = New-Object System.Windows.Controls.MenuItem
+    $item.Header = $fileName
+    $item.Tag    = $filePath
+    $null = $item.Add_Click({
+        param($sender, $eventArgs)
+        $fp = $sender.Tag
+        if (-not (Test-Path -LiteralPath $fp)) { return }
+        try {
+            $psi = New-Object System.Diagnostics.ProcessStartInfo
+            $psi.FileName = $fp
+            $psi.UseShellExecute = $true
+            [System.Diagnostics.Process]::Start($psi) | Out-Null
+        } catch {
+            [System.Windows.MessageBox]::Show("開けなかったのだ: $fp `n`n$($_.Exception.Message)")
+        }
+    })
+    $subA.Items.Add($item) | Out-Null
+}
+$menu.Items.Add($subA) | Out-Null
+
+# ユーザー補足
+$mi6 = New-Object System.Windows.Controls.MenuItem
+$mi6.Header = "     ユーザー補足"
+$mi6.Add_Click({
+    [Console]::WriteLine(" ")
+    [Console]::WriteLine("《 myXName（XN） - パス一覧 - 》")
+    [Console]::WriteLine(" ")
+    [Console]::WriteLine("スクリプト本体: $PSCommandPath")
+    [Console]::WriteLine("ローカルZIP   : $PSScriptRoot\XZ_pak_zipを開く.bat")
+    [Console]::WriteLine("外部ツール1   : D:\myX\myXBlank\XB.bat")
+    [Console]::WriteLine("外部ツール2   : D:\myX\User.bat")
+    [Console]::WriteLine("履歴フォルダ  : $env:TEMP")
+})
+$menu.Items.Add($mi6) | Out-Null
+$menu.Items.Add((New-Object System.Windows.Controls.Separator)) | Out-Null
+
+# 履歴フォルダ
+$mi1 = New-Object System.Windows.Controls.MenuItem
+$mi1.Header = "→ 履歴フォルダを開く"
+$mi1.Add_Click({ Start-Process -FilePath "$env:TEMP" })
+$menu.Items.Add($mi1) | Out-Null
+
+# エクスプローラー
+$ext3 = New-Object System.Windows.Controls.MenuItem
+$ext3.Header  = "＋ エクスプローラー..."
+$ext3.ToolTip = "現在位置を開く$PSScriptRoot"
+$ext3.Add_Click({
+    explorer.exe "$PSScriptRoot"
+})
+$menu.Items.Add($ext3) | Out-Null
+$menu.Items.Add((New-Object System.Windows.Controls.Separator)) | Out-Null
+
+# 情報
+$mi7 = New-Object System.Windows.Controls.MenuItem
+$mi7.Header = " i  情報"
+$mi7.Add_Click({
+    [System.Windows.MessageBox]::Show(
+        "myXシリーズ7`n`nmyXName（XN） - 命名マスター v2.0 -`n`n" +
+        "概要：ファイル単体を命名するリネーム補助ツール",
+        "i 情報")
+})
+$menu.Items.Add($mi7) | Out-Null
+$menu.Items.Add((New-Object System.Windows.Controls.Separator)) | Out-Null
+
+# 閉じる
+$mi8 = New-Object System.Windows.Controls.MenuItem
+$mi8.Header = "×  閉じる"
+$mi8.Add_Click({ $window.Close() })
+$menu.Items.Add($mi8) | Out-Null
+
+# ウィンドウに割り当て（WPFは自動で右クリック反応するのだ）
+$window.ContextMenu = $menu
 
 # 初期化と表示
 $window.ShowDialog() | Out-Null

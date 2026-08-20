@@ -119,12 +119,15 @@ v2.0 - 新メニュー追加(2026年1月11日)
 	多数の機能追加と修正で編集強化
 
 ■ ブログ / その他情報
+---------------------------------------
+公式サイト・記事
+https://note.com/myxindex
 
 公式ブログ
-: http://blog.livedoor.jp/ldsano/
+http://blog.livedoor.jp/ldsano/
 
-その他のお知らせ
-: https://www.youtube.com/@myX-env
+動画
+https://www.youtube.com/@myX-env
 
 =======================================
 

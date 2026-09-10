@@ -1,5 +1,5 @@
 ﻿=======================================
-(C) 2025 myX Series 18 (XL)
+(C) 2026 myX Series 18 (XL)
 myXLine - Inline Calculator v1.0 -
 =======================================
 【Files】
@@ -85,7 +85,7 @@ for any direct or indirect damages arising
 from the use of this software.
 Please use it at your own risk.
 =======================================
-(C) 2025 myX Series 18 (XL)
+(C) 2026 myX Series 18 (XL)
 =======================================
 
 ■ Update History

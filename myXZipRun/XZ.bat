@@ -3,6 +3,6 @@
 @echo off
 rem êŠŒÅ’è ¨ –{‘Ì‹N“® ¨ Œ³–ß‚è
 pushd "%~dp0"
-start "" /b "myXZipRun.exe" %*
+start "" "myXZipRun.exe" %*
 popd
 exit /b

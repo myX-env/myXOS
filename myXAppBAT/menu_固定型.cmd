@@ -31,9 +31,10 @@ echo myXFull.bat       :: #13 フルBAT       － 組込BATﾗﾝﾁｬｰ － myXFull（XF）
 echo myXExeway.bat     :: #14 中継EXE       － EXE仲介ﾗｯﾊﾟｰ － myXExeway（XE）
 echo myXView.bat       :: #15 Xビュー       － EXE内ﾍﾙﾌﾟ確認 － myXView（XV）
 echo myXReturn.bat     :: #16 リターンBAT   － 自己ﾘﾈｰﾑﾄｸﾞﾙ － myXReturn（XR）
-echo myXIndex.bat      :: #17 Xインデックス  － ﾌｫﾙﾀﾞﾂﾘｰﾋﾞｭｱ － myXIndex（XI）
+echo myXIndex.bat      :: #17 Xインデックス － ﾌｫﾙﾀﾞﾂﾘｰﾋﾞｭｱ － myXIndex（XI）
 echo myXLine.bat       :: #18 インライン電卓 － どこでも電卓 － myXLine（XL）
 echo myXXorBox.bat     :: #19 反転BOX       － 範囲反転表示 － myXXorBox（XX）
+echo myXQuick.bat      :: #20 Xクイック     － ﾜﾝｷｰ呼出し   － myXQuick（XQ）
 ) > menu_list.txt
 
 :loop

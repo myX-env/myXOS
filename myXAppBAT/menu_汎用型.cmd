@@ -43,6 +43,7 @@ for %%F in ("%TARGET%\myX*.bat") do (
     if /i "%%~nF"=="myXLine" set "desc=インライン電卓"
     if /i "%%~nF"=="myXName" set "desc=命名マスター"
     if /i "%%~nF"=="myXPad" set "desc=XP風メモ帳"
+    if /i "%%~nF"=="myXQuick" set "desc=クイックコール"
     if /i "%%~nF"=="myXReturn" set "desc=リターンBAT"
     if /i "%%~nF"=="myXSend" set "desc=送る無双"
     if /i "%%~nF"=="myXTimemo9" set "desc=タイメモ9"

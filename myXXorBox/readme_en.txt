@@ -1,5 +1,5 @@
 ﻿=======================================
-(C) 2025 myXseries19（XX）
+(C) 2026 myXseries19（XX）
 myXXorBox - Invert BOX v1.0 -
 =======================================
 [File Structure]
@@ -53,7 +53,7 @@ The author assumes no responsibility for any damage resulting from the use of th
 Use at your own risk.
 
 =======================================
-(C) 2025 myX Series 19 (XX)
+(C) 2026 myX Series 19 (XX)
 =======================================
 
 ■ Update History

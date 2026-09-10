@@ -1,8 +1,8 @@
-:: 設定切替
-:: - 優先切替え：settings+.cmd / _settings+.cmd
-:: - 有効・無効：settings+.cmd / settings+.bat
+:: 設定切替（settings+ を基準）
+:: 有効・無効：.cmd / .bat
+:: 優先切替え：settings+.cmd / _settings+.cmd
 :: "_"バーの有無：settings.cmd の前後（環境依存）
-:: ".bat"：設定無効
+:: 通常は"settings+.cmd"に"_"バー切替え推奨
 @echo off
 
 echo.

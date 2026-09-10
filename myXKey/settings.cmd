@@ -1,7 +1,6 @@
-:: 設定切替（有効・無効）
-:: settings.cmd / settings.bat
-:: .cmd = 設定有効
-:: .bat = 設定無効
+:: 設定切替（settings.cmd / settings.bat）
+:: 有効・無効：.cmd / .bat
+:: 拡張子のリネームでの切替え
 @echo off
 
 echo.

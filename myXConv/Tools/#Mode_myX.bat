@@ -25,6 +25,7 @@ if /I "%mode%"=="K"  goto DO_K
 if /I "%mode%"=="L"  goto DO_L
 if /I "%mode%"=="N"  goto DO_N
 if /I "%mode%"=="P"  goto DO_P
+if /I "%mode%"=="Q"  goto DO_Q
 if /I "%mode%"=="R"  goto DO_R
 if /I "%mode%"=="S"  goto DO_S
 if /I "%mode%"=="T"  goto DO_T
@@ -71,7 +72,7 @@ start "" "D:\myX\myXIndex\myXIndex.exe" "%~2"
 goto END
 
 :DO_K
-call "D:\myX\myXKey\XK.bat"
+call "D:\myX\myXKey\XK.bat" "%~2"
 goto END
 
 :DO_L
@@ -84,6 +85,10 @@ goto END
 
 :DO_P
 start "" "D:\myX\myXPad\myXPad.exe" "%~2"
+goto END
+
+:DO_Q
+call "D:\myX\myXQuick\XQ.bat" "%~2"
 goto END
 
 :DO_R
@@ -119,11 +124,11 @@ start "" notepad.exe "%~2"
 goto END
 
 :DO_CMD
-start cmd.exe
+start "" cmd.exe %~2 %~3 %~4
 goto END
 
 :DO_PS
-start powershell.exe -NoLogo -NoProfile
+start "" powershell.exe -NoLogo -NoProfile %~2 %~3 %~4
 goto END
 
 :DEFAULT
@@ -140,4 +145,3 @@ goto END
 popd
 
 exit /b
-

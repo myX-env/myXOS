@@ -1,4 +1,4 @@
 :: ƒƒ‚’ ‚ğ‹N“®
 @echo off
-start "" /b "notepad.exe" %*
+start "" "notepad.exe" %*
 exit /b

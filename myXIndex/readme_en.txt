@@ -1,5 +1,5 @@
-﻿=================================
-myX Series 17 (XI)
+=================================
+(C) 2026 myX Series 17 (XI)
 myXIndex - X Index v1.0 -
 =================================
 File Structure and Brief Explanation
@@ -8,7 +8,8 @@ myXIndex.exe …Main program
 readme.txt_en …This file
 
 ■ Introduction
-myXIndex is a tool that converts folder structures into an HTML tree view.
+myXIndex is a tool that converts folder structures
+into an HTML tree view.
 
 ■ Operating Environment
 ・OS: Windows 10 or later
@@ -17,24 +18,31 @@ myXIndex is a tool that converts folder structures into an HTML tree view.
 
 ■ Installation and Startup Method
 You can start it by passing a folder as an argument.
-(The file will be treated as the parent folder.)
 Starting from right-click "Send to" is recommended.
+Execution command:
+  myXIndex.exe "D:\myX"
+  myXIndex.exe "D:\myX\User.bat"
+* If a file is specified, the parent folder will be processed.
+Press Ctrl+C to cancel the operation while it is running.
 
 ■ Notes
 ・Settings are not saved (config.ini is not required)
 ・The registry is not used
 
 ■ Prohibited Actions
-Unauthorized modification, redistribution, and sale of this program (myXIndex) are prohibited.
+Unauthorized modification, redistribution,
+and sale of this program (myXIndex) are prohibited.
 Please use it freely within the scope of personal use.
 
 ■ Disclaimer
-This program was created based on operational checks at the time of provision, but we assume no responsibility whatsoever for any malfunctions or problems arising from its use.
+This program was created based on operational checks
+at the time of provision, but we assume no responsibility
+whatsoever for any malfunctions or problems arising from its use.
 Please use it at your own risk.
 Functions may be changed or updated without notice.
 
 =======================================
-(C) 2025 myX Series 17 (XI)
+(C) 2026 myX Series 17 (XI)
 =======================================
 
 ■ Update History

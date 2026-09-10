@@ -3,6 +3,6 @@
 @echo off
 rem Œ»êˆÚ“® ¨ –{‘Ì‹N“® ¨ Œ³–ß‚è
 pushd "%~dp0"
-start "" /b "myXBlank.exe" %*
+start "" "myXBlank.exe" %*
 popd
 exit /b

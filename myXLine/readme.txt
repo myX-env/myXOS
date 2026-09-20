@@ -6,7 +6,8 @@ myXLine - インライン電卓 v1.0 -
 myXLine
 ├ myXLine.exe　：インライン電卓本体
 ├ LiveClip.exe ：テキスト専用クリップモニター
-└ readme.txt　：このファイル
+├ readme.txt	：このファイル
+└ readme_en.txt：英語翻訳
 
 【動作環境】
 ・Windows XP 以降

@@ -4,9 +4,10 @@ myXLine - Inline Calculator v1.0 -
 =======================================
 【Files】
 myXLine
-├ myXLine.exe　: Inline Calculator
-├ LiveClip.exe : Text Clipboard Monitor
-└ readme_en.txt　 : This file
+├ myXLine.exe	: Inline Calculator
+├ LiveClip.exe	: Text Clipboard Monitor
+├ readme.txt	: Japanese
+└ readme_en.txt: This file
 
 【System Requirements】
 * Windows XP or later

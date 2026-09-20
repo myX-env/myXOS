@@ -2,13 +2,12 @@
 (C) 2026 myXシリーズ19（XX）
 myXXorBox - 反転BOX v1.0 -
 =======================================
-
 【ファイル構成】
 myXXorBox
-├ myXXorBox.exe		：本体
+├ myXXorBox.exe	：本体
 ├ myXXorBox_Lite.exe	：軽量版（画像用）
 ├ readme.txt		：このファイル
-└ readme_en.txt		：英語翻訳
+└ readme_en.txt	：英語翻訳
 
 【開発環境】
 ・Windows 10

@@ -4,10 +4,10 @@ myXXorBox - Invert BOX v1.0 -
 =======================================
 [File Structure]
 myXXorBox
-├ myXXorBox.exe		: Main program
+├ myXXorBox.exe	: Main program
 ├ myXXorBox_Lite.exe	: Light version (for images)
 ├ readme.txt		: Japanese
-└ readme_en.txt		: This file
+└ readme_en.txt	: This file
 
 [Development Environment]
 Windows 10

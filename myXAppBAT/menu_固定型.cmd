@@ -34,7 +34,7 @@ echo myXReturn.bat     :: #16 リターンBAT   － 自己ﾘﾈｰﾑﾄｸﾞﾙ － myXReturn（XR）
 echo myXIndex.bat      :: #17 Xインデックス － ﾌｫﾙﾀﾞﾂﾘｰﾋﾞｭｱ － myXIndex（XI）
 echo myXLine.bat       :: #18 インライン電卓 － どこでも電卓 － myXLine（XL）
 echo myXXorBox.bat     :: #19 反転BOX       － 範囲反転表示 － myXXorBox（XX）
-echo myXQuick.bat      :: #20 Xクイック     － ﾜﾝｷｰ呼出し   － myXQuick（XQ）
+echo myXQuick.bat      :: #20 クイックコール － ﾜﾝｷｰ呼出し   － myXQuick（XQ）
 ) > menu_list.txt
 
 :loop

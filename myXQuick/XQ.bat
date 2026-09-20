@@ -3,6 +3,6 @@
 @echo off
 rem Œ»êŒÅ’è ¨ –{‘Ì‹N“® ¨ Œ³–ß‚è
 pushd "%~dp0"
-start "" "myXQuick.exe" %*
+start "" "myXQuick_Lite.exe" %*
 popd
 exit /b

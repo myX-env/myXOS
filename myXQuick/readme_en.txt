@@ -1,14 +1,13 @@
-=======================================
+﻿=======================================
 (C) 2026 myX Series 20 (XQ)
 myXQuick - Quick Call v1.0 -
 =======================================
-
 [File Structure]
 myXQuick
-├ myXQuick.exe		: Main executable
-├ XQ.bat		: External startup batch file
-├ readme.txt		: This file
-└ readme_en.txt	: English translation
+├ myXQuick_Lite.exe	: Main executable
+├ XQ.bat	: External startup batch file
+├ readme.txt	: This file
+└ readme_en.txt: English translation
 
 [Development Environment]
 ・Windows 10
@@ -26,6 +25,7 @@ myXQuick.exe "Program to launch" "Argument 1" "Argument 2" ...
 Example:
 myXQuick.exe "D:\app\Tool.exe" memo.txt test.txt
 * The default target program is myXKey.exe.
+* Switchable from the tray menu.
 
 [Prohibited Actions]
 Redistributing this software while impersonating the author.
@@ -36,6 +36,18 @@ that violates laws or regulations.
 The author assumes no responsibility for any damage
 resulting from the use of this software.
 Use at your own risk.
+
+--- note ---
+D:\
+└ myX
+    ├ myXKey      <Dir>
+    ├ myXExeway   <Dir>
+    └ myXQuick    <Dir>
+        └ myXQuick.exe
+
+Launch myXQuick.exe
+Press the Pause key to launch myXKey
+Select a mode from the tray menu
 
 =======================================
 (C) 2026 myX Series 20（XQ）

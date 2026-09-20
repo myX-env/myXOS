@@ -1,14 +1,13 @@
 =======================================
 (C) 2026 myXシリーズ20（XQ）
-myXQuick - クイックコール v1.0 -
+myXQuick - クイックコール v1.0軽量版 -
 =======================================
-
 【ファイル構成】
 myXQuick
-├ myXQuick.exe		：本体
-├ XQ.bat		：外部からの起動バッチ
-├ readme.txt		：このファイル
-└ readme_en.txt	：英語翻訳
+├ myXQuick_Lite.exe	：本体
+├ XQ.bat	：外部からの起動バッチ
+├ readme.txt	：このファイル
+└ readme_en.txt：英語翻訳
 
 【開発環境】
 ・Windows 10
@@ -24,6 +23,7 @@ myXQuick.exe "起動するプログラム" "引数1" "引数2" ...
 例：
 myXQuick.exe "D:\app\Tool.exe" memo.txt test.txt
 ※ デフォルトの対象は myXKey.exe
+※トレイメニューから切替え可能
 
 【禁止】
 ・本ソフトを作者になりすまして再配布すること。

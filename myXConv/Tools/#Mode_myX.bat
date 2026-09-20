@@ -88,7 +88,7 @@ start "" "D:\myX\myXPad\myXPad.exe" "%~2"
 goto END
 
 :DO_Q
-call "D:\myX\myXQuick\XQ.bat" "%~2"
+call "D:\myX\myXQuick\XQ.bat" "%~2" "%~3" "%~4"
 goto END
 
 :DO_R

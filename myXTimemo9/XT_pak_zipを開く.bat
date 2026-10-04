@@ -2,6 +2,6 @@
 :: ©g‚Æ“¯‚¶êŠ‚É‚ ‚éæ“ª‚ÌZIP‚ªQÆ‚³‚ê‚é
 @echo off
 pushd %~dp0
-call "%~dp0..\myXZipRun\XZ_exe.bat" %*
+start "" "%~dp0..\myXZipRun\myXZipRun.exe" %*
 popd
 exit /b

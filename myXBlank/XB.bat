@@ -2,7 +2,7 @@
 :: 外部からの起動バッチ
 @echo off
 rem 現場移動 → 本体起動 → 元戻り
-pushd "%~dp0"
-start "" "myXBlank.exe" %*
+pushd %~dp0
+start "" myXBlank.exe %*
 popd
 exit /b

@@ -95,21 +95,21 @@ $form.Add_MouseUp({
         $menu = New-Object System.Windows.Forms.ContextMenuStrip
 
         # 外部1
-        $ext1 = $menu.Items.Add("＋ 外部ツール1... 変換BOX_空箱")
+        $ext1 = $menu.Items.Add("＋ 外部ツール1(&B)... 変換BOX_空箱")
         $ext1.ToolTipText = "D:\myX\myXBlank\XB.bat"
         $ext1.Add_Click({
             Start-Process -FilePath "D:\myX\myXBlank\XB.bat"
         })
 
         # 外部2
-        $ext2 = $menu.Items.Add("＋ 外部ツール2... ユーザー")
+        $ext2 = $menu.Items.Add("＋ 外部ツール2(&U)... ユーザー")
         $ext2.ToolTipText = "D:\myX\User.bat"
         $ext2.Add_Click({
             Start-Process -FilePath "D:\myX\User.bat"
         })
 
         # ローカルZIP
-        $ext = $menu.Items.Add("＋ ローカルZIP... ZIPRUN")
+        $ext = $menu.Items.Add("＋ ローカルZIP(&Z)... ZIPRUN")
         $ext.ToolTipText = "$PSScriptRoot\XZ_pak_zipを開く.bat"        
         $ext.Add_Click({
             Start-Process "$PSScriptRoot\XZ_pak_zipを開く.bat"
@@ -117,7 +117,7 @@ $form.Add_MouseUp({
         $menu.Items.Add("-") | Out-Null # 区切り
 
         # ローカル選択
-        $subA = New-Object System.Windows.Forms.ToolStripMenuItem("≫ ローカル選択")
+        $subA = New-Object System.Windows.Forms.ToolStripMenuItem("≫ ローカル選択(&L)")
         $subA.ToolTipText = "現在位置のファイルを起動"
         $basePath = $PSScriptRoot
         if ([string]::IsNullOrWhiteSpace($basePath)) {
@@ -148,7 +148,7 @@ $form.Add_MouseUp({
         $menu.Items.Add($subA) | Out-Null
 
         # ユーザー補足
-        $mi6 = $menu.Items.Add("     ユーザー補足")
+        $mi6 = $menu.Items.Add("     ユーザー補足(&H)")
         $mi6.Add_Click({
             [Console]::WriteLine(" ")
             [Console]::WriteLine("《 myXWorker（XW） - パス一覧 - 》")
@@ -162,14 +162,14 @@ $form.Add_MouseUp({
         $menu.Items.Add("-") | Out-Null # 区切り
 
         # 履歴フォルダ
-        $menu.Items.Add("→ 履歴フォルダを開く") | ForEach-Object {
+        $menu.Items.Add("→ 履歴フォルダを開く(&T)") | ForEach-Object {
             $_.Add_Click({
                 Start-Process -FilePath "$env:TEMP"
             })
         }
 
         # エクスプローラー
-        $ext3 = $menu.Items.Add("＋ エクスプローラー...")
+        $ext3 = $menu.Items.Add("＋ エクスプローラー(&E)...")
         $ext3.ToolTipText = "現在位置を開く$PSScriptRoot"
         $ext3.Add_Click({
             explorer.exe "$PSScriptRoot"
@@ -177,7 +177,7 @@ $form.Add_MouseUp({
         $menu.Items.Add("-") | Out-Null # 区切り
 
         # 情報
-        $menu.Items.Add(" i  情報") | ForEach-Object {
+        $menu.Items.Add(" i  情報(&I)") | ForEach-Object {
             $_.Add_Click({
                 [System.Windows.Forms.MessageBox]::Show(
                     "myXシリーズ8 `n`nmyXWorker（XW） - Xワーカー v2.0 -`n`n" +
@@ -193,7 +193,7 @@ $form.Add_MouseUp({
         $menu.Items.Add("-") | Out-Null # 区切り
 
         # 閉じる
-        $menu.Items.Add("× 閉じる") | ForEach-Object {
+        $menu.Items.Add("× 閉じる(&X)") | ForEach-Object {
             $_.Add_Click({ $form.Close() })
         }
 

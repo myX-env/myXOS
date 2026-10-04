@@ -2,7 +2,6 @@
 @echo off
 rem Œ»êˆÚ“® ¨ –{‘Ì‹N“® ¨ Œ³–ß‚è
 pushd "%~dp0..\..\myXBlank"
-taskkill /f /im XB.bat
 call XB.bat %*
 popd
 exit /b

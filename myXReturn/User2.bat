@@ -13,7 +13,7 @@
 
 :: ★キーナビを起動（不要ならOFF）
 pushd "%~dp0..\myXKey"
-start "" /b "myXKey.exe"
+start "" myXKey.exe
 popd
 
 set m=%~nx0

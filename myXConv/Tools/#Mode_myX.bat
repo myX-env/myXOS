@@ -23,6 +23,7 @@ if /I "%mode%"=="H"  goto DO_H
 if /I "%mode%"=="I"  goto DO_I
 if /I "%mode%"=="K"  goto DO_K
 if /I "%mode%"=="L"  goto DO_L
+if /I "%mode%"=="M"  goto DO_M
 if /I "%mode%"=="N"  goto DO_N
 if /I "%mode%"=="P"  goto DO_P
 if /I "%mode%"=="Q"  goto DO_Q
@@ -77,6 +78,10 @@ goto END
 
 :DO_L
 start "" "D:\myX\myXLine\myXLine.exe" "%~2"
+goto END
+
+:DO_M
+start "" "D:\myX\myXMouse\myXMouse.exe"
 goto END
 
 :DO_N

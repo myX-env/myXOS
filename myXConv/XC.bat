@@ -3,6 +3,6 @@
 @echo off
 rem êŠŒÅ’è ¨ –{‘Ì‹N“® ¨ Œ³–ß‚è
 pushd %~dp0
-start "" "myXConv.exe" %*
+start "" myXConv.exe %*
 popd
 exit /b

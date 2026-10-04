@@ -2,7 +2,7 @@
 :: 外部からの起動バッチ
 @echo off
 rem 現場固定 → 本体起動 → 元戻り
-pushd "%~dp0"
-start "" "myXQuick_Lite.exe" %*
+pushd %~dp0
+start "" myXQuick_Lite.exe %*
 popd
 exit /b

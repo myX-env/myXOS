@@ -1,9 +1,6 @@
 :: 指定アプリを固定パスから呼び出すバッチ
 @echo off
 
-:: キーナビ終了(重複防止のため)
-taskkill /f /im myXKey.exe >nul 2>&1
-
 rem 現場移動 → 本体起動 → 元戻り
 cd /d "%~dp0..\myXFull"
 call myXFull.bat %*

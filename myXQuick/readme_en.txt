@@ -6,6 +6,7 @@ myXQuick - Quick Call v1.0 -
 myXQuick
 ├ myXQuick_Lite.exe	: Main executable
 ├ XQ.bat	: External startup batch file
+├ LPause_Lite.exe	: Pause Key Trigger
 ├ readme.txt	: This file
 └ readme_en.txt: English translation
 
@@ -26,6 +27,8 @@ Example:
 myXQuick.exe "D:\app\Tool.exe" memo.txt test.txt
 * The default target program is myXKey.exe.
 * Switchable from the tray menu.
+* When used with LPause_Lite.exe, 
+  the Pause key can also be triggered by mouse input.
 
 [Prohibited Actions]
 Redistributing this software while impersonating the author.
@@ -43,9 +46,9 @@ D:\
     ├ myXKey      <Dir>
     ├ myXExeway   <Dir>
     └ myXQuick    <Dir>
-        └ myXQuick.exe
+        └ myXQuick_Lite.exe
 
-Launch myXQuick.exe
+Launch myXQuick_Lite.exe
 Press the Pause key to launch myXKey
 Select a mode from the tray menu
 

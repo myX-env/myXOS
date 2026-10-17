@@ -1,6 +1,6 @@
 ﻿=======================================
 (C) 2026 myX Series 18 (XL)
-myXLine - Inline Calculator v1.0 -
+myXLine - Inline Calculator v2.0 -
 =======================================
 【Files】
 myXLine
@@ -24,7 +24,8 @@ Example:
 In Normal Mode, the clipboard is restored after the calculation.
 
 In Soroban Mode, the calculation result is converted into an
-8-digit soroban (Japanese abacus) text display and copied to the clipboard.
+8-digit soroban (Japanese abacus) text display and
+copied to the clipboard.
 
 Run LiveClip.exe to monitor clipboard contents in real time.
 
@@ -34,7 +35,11 @@ Run LiveClip.exe to monitor clipboard contents in real time.
 3. Select a mathematical expression.
 4. Press the hotkey.
 5. "=Result" is inserted after the expression.
-6. In Soroban Mode, the clipboard is replaced with the soroban display.
+6. In Soroban Mode, the clipboard is replaced
+   with the soroban display.
+7. With "Read Aloud Only,"
+   the selected range is read aloud regardless of whether
+   it contains a calculation formula.
 
 【Supported Operators】
 +　-　*　/　^　(Exponentiation)

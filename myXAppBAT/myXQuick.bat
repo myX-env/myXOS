@@ -10,12 +10,13 @@ exit /b
 
 =======================================
 (C) 2026 myXシリーズ20（XQ）
-myXQuick - Xクイック v1.0 -
+myXQuick - クイックコール v1.0軽量版 -
 =======================================
 【ファイル構成】
 myXQuick
 ├ myXQuick_Lite.exe	：本体
 ├ XQ.bat	：外部からの起動バッチ
+├ LPause_Lite.exe	：Pauseキー発動ツール
 ├ readme.txt	：このファイル
 └ readme_en.txt：英語翻訳
 
@@ -32,7 +33,9 @@ Pause／BreakキーでmyXKey（XK）キーナビを
 myXQuick.exe "起動するプログラム" "引数1" "引数2" ...
 例：
 myXQuick.exe "D:\app\Tool.exe" memo.txt test.txt
-※ デフォルトの対象は myXKey.exe
+※デフォルトの対象は myXKey.exe
 ※トレイメニューから切替え可能
+※ LPause_Lite.exe を併用すると、マウス操作からでも
+   Pauseキーを発動できます
 
 ---★ここまでアプリ情報

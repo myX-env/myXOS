@@ -10,7 +10,7 @@ exit /b
 
 =================================
  myXシリーズ14（XE）
- myXExeway - 中継EXE v1.0 -
+ myXExeway - 中継EXE v2.0 -
 =================================
 --- ≪中継EXE利用マニュアル≫ ---
 
@@ -25,6 +25,7 @@ D:\myX\myXExeway
   ├ Exeway（標準EXE用、名前固定）
   │  └ Hello.exe …通常のEXE
   └ Exeway.exe …中継EXE
+※ KeyAct.exe はXQとキー操作用の連携部品なのだ
 
 ■ 注意ポイント
 フォルダ名で役割を判断するのだ

@@ -51,6 +51,7 @@ for %%F in ("%TARGET%\myX*.bat") do (
     if /i "%%~nF"=="myXView" set "desc=Xビュー"
     if /i "%%~nF"=="myXWorker" set "desc=Xワーカー"
     if /i "%%~nF"=="myXXorBox" set "desc=反転BOX "
+    if /i "%%~nF"=="myXYomi" set "desc=（仮）読みバッチ "
     if /i "%%~nF"=="myXZipRun" set "desc=ZIPRUN"
     if /i "%%~nF"=="myX－仮登録サンプル" set "desc=コメント"
 

@@ -1,4 +1,4 @@
-:: Hello, World!ã‚’è¡¨ç¤º
+:: Hello, World!‚ð•\Ž¦
 @echo off
 echo Hello, World!
 pause
